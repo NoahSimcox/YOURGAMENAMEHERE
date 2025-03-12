@@ -8,6 +8,7 @@ NOTE: This class is the metaphorical "main method" of your program,
 
 */
 import java.awt.*;
+import java.util.ArrayList;
 
 class Tetris extends Game {
 	static int counter = 0;
@@ -34,4 +35,17 @@ class Tetris extends Game {
    		Tetris a = new Tetris();
 		a.repaint();
   }
+
+
+	public class BoardManager {
+
+		private ArrayList<Block> blockList;
+
+
+		public void addBlocks(){
+
+		}
+	}
+
+
 }

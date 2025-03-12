@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.KeyListener;
 import java.nio.file.attribute.PosixFileAttributes;
 
-public class TetrisBlock extends Polygon implements KeyListener {
+public class TetrisBlock extends Polygon {
 
     private Block[] blocks;
     private BlockShape blockShape;
