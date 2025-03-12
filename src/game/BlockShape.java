@@ -11,9 +11,9 @@ public enum BlockShape {
     O_SHAPE(new Point[]{new Point(0, 0)}),
     L_SHAPE(new Point[]{new Point(0, 0)}),
     J_SHAPE(new Point[]{new Point(0, 0)}),
-    BLOCKER_SHAPE(new Point[]{new Point(0, 0)});
+    BLOCKER_AND_BOMB_SHAPE(new Point[]{new Point(0, 0)});
 
-    Point[] points;
+    private Point[] points;
 
     BlockShape(Point[] points) {
         this.points = points;

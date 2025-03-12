@@ -72,7 +72,21 @@ class Polygon {
     return crossingNumber%2 == 1;
   }
   
-  public void rotate(int degrees) {rotation = (rotation+degrees)%360;}
+  public void rotate() {
+
+    int counter = 0;
+    for (Point point : shape){
+
+      double rotatedX = point.y;
+      double rotatedY = -point.x;
+
+      shape[counter] = new Point(rotatedX, rotatedY);
+
+      counter++;
+    }
+
+    rotation = (rotation+90)%360;
+  }
   
   /*
   The following methods are private access restricted because, as this access

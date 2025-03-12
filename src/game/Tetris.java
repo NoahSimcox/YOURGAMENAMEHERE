@@ -8,12 +8,11 @@ NOTE: This class is the metaphorical "main method" of your program,
 
 */
 import java.awt.*;
-import java.awt.event.*;
 
-class YourGameName extends Game {
+class Tetris extends Game {
 	static int counter = 0;
 
-  public YourGameName() {
+  public Tetris() {
     super("YourGameName!",800,600);
     this.setFocusable(true);
 	this.requestFocus();
@@ -32,7 +31,7 @@ class YourGameName extends Game {
   }
   
 	public static void main (String[] args) {
-   		YourGameName a = new YourGameName();
+   		Tetris a = new Tetris();
 		a.repaint();
   }
 }
