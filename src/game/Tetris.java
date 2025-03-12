@@ -12,29 +12,26 @@ import java.util.ArrayList;
 
 class Tetris extends Game {
 	static int counter = 0;
+	BoardManager boardManager = new BoardManager();
 
   public Tetris() {
-    super("YourGameName!",800,600);
+    super("Tetris!",800,600);
     this.setFocusable(true);
 	this.requestFocus();
   }
   
 	public void paint(Graphics brush) {
-    	brush.setColor(Color.black);
-    	brush.fillRect(0,0,width,height);
-    	
-    	// sample code for printing message for debugging
-    	// counter is incremented and this message printed
-    	// each time the canvas is repainted
-    	counter++;
-    	brush.setColor(Color.white);
-    	brush.drawString("Counter is " + counter,10,10);
-  }
-  
+
+	  boardManager.showBoard(brush);
+
+	}
 	public static void main (String[] args) {
    		Tetris a = new Tetris();
 		a.repaint();
   }
+
+
+
 
 
 	public class BoardManager {
@@ -42,10 +39,29 @@ class Tetris extends Game {
 		private ArrayList<Block> blockList;
 
 
-		public void addBlocks(){
+		public BoardManager(){}
+
+		public void addBlock(Polygon polyogn){
 
 		}
+
+		public void showBoard(Graphics brush){
+
+			brush.setColor(Color.black);
+			brush.fillRect(0, 0, width, height);
+			brush.setColor(Color.gray);
+			brush.fillRect(1, 1, 251, 1);
+			brush.fillRect(1, 1, 1, 501);
+			brush.fillRect(251, 1, 1, 501);
+			brush.fillRect(1, 501, 250, 1);
+
+			for (int i = 0; i < 19; i++) {
+				for (int j = 0; j < 9; j++) {
+					brush.fillRect(23 + 25 * j, 26 + 25 * i, 7, 1);
+					brush.fillRect(26 + 25 * j, 23 + 25 * i, 1, 7);
+
+				}
+			}
+		}
 	}
-
-
 }
